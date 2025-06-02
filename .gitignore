@@ -1,0 +1,7 @@
+.parcel-cache/
+dist/
+node_modules/
+src/preview.jpg
+src/style-guide.md
+src/design
+src/README-template.md
