@@ -1,18 +1,23 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@300,600,800;1,6..12,200..1000&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@300,600,800;1,6..12,200..1000&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 body{
-    font-family:  sans-serif;
+    font-family: "Nunito Sans",sans-serif;
     font-optical-sizing: auto;
     background-color: var(--bgColor);
+    transition: 250ms all ease-in;
 }
 
 nav{
     padding-top: 1em;
-    background-color: var(--bgColor);
+    background-color: var(--bgColor-country);
+    transition: 250ms all ease-in;
+    position: sticky;
+    top: 0;
+    height: fit-content;
     & h2{
         display:inline;
         padding-left: 3em;
@@ -29,22 +34,41 @@ nav{
     }
 }
 form{
-    width:90%;
-    margin: 1em auto;
+    width: 90%;
+    margin: 2em auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    & input,
+    & select,
+    & option{
+        background-color: var(--bgColor-country);
+        border-radius: 0.2em;
+        box-shadow: 1px 1px 5px 1px var(--darkColor);
+        border: none;
+        outline: none;
+        padding: 1em 1.4em;
+    }
+    & input{
+        width: 25em;
+    }
+    & ::picker(select){
+        border: none ;
+    }
     & img{
         width: 1em;
         height: 1em;
     }
 }
 main{
-    width:90%;
+    width:80%;
     margin:0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1em;
     background-color: var(--bgColor);
     color: var(--textColor);
-    transition: 300ms all ease-in;
+    transition: 250ms all ease-in;
 }
 
 .country-details{
@@ -53,12 +77,10 @@ main{
     left: 0;
     width:100%;
     height:95%;
-    background-color: var(--bgColor-country);
-    gap: 2em;
-    scroll-behavior: none;
-    transition: 300ms all ease-in;
+    transition: 250ms all ease-in;
+    background-color: var(--bgColor);
     & .flag{
-        width: 400px;
+        width: 500px;
         height: fit-content;
         
     }
@@ -89,26 +111,29 @@ main{
 
 .country{
     width: 15em;
-        cursor: pointer;
-        background-color: var(--bgColor-country);
-        transition: 250ms all ease-in;
-        & span{
-            font-weight: 800;
-            font-size: 0.8em;
-            & span:nth-last-of-type(3){
-                font-weight: 300;
-            }
+    cursor: pointer;
+    background-color: var(--bgColor-country);
+    transition: 250ms all ease-in;
+    & span{
+        font-weight: 800;
+        font-size: 0.8em;
+        & span:nth-last-of-type(3){
+            font-weight: 300;
         }
-        & img{
-            width: 15em;
-            height: 10em;
-        }
-        & h4{
-            padding: 1em;
-        }
-        & p{
-            padding: 1em;
-        }
+    }
+    & img{
+        width: 15em;
+        height: 10em;
+    }
+    & h4{
+        padding: 1em;
+    }
+    & p{
+        padding: 0.7em;
+    }
+    & p:last-child{
+        padding-bottom: 1.2em;
+    }
 }
 
 .country:hover{
@@ -123,18 +148,29 @@ main{
         color: hsl(200, 15%, 8%);
     }
     & main{
-        background-color:hsl(0, 0%, 99%);
+        background-color: hsl(0, 0%, 99%);
         color: hsl(200, 15%, 8%);
-        & div{
+        & .country{
             background-color: hsl(0, 100%, 100%);
+            color: hsl(200, 15%, 8%);
         }
     }
     & .country-details{
-        background-color:hsl(0, 100%, 100%);
+        background-color: hsl(0, 0%, 99%);
         & button{
             background-color: hsl(0, 0%, 99%);
             color: hsl(200, 15%, 8%);
         } 
+    }
+    & form{
+        color: hsl(200, 15%, 8%);
+        & input,
+        & select,
+        & option{
+            background-color: hsl(0, 0%, 99%);
+            color: hsl(200, 15%, 8%);
+            box-shadow: 1px 1px 5px 1px hsl(0, 0%, 99%); 
+        }
     }
 }
 
@@ -164,14 +200,9 @@ main{
         color: hsl(0, 100%, 100%);
     }
     & main{
-        background-color:hsl(207, 26%, 17%);
         color: hsl(0, 100%, 100%);
-        & div{
-            background-color: hsl(209, 23%, 22%);
-        }
     }
     & .country-details{
-        background-color:hsl(209, 23%, 22%);
         & button{
             background-color: hsl(207, 26%, 17%);
             color: hsl(0, 100%, 100%);
