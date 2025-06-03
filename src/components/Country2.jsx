@@ -6,16 +6,18 @@ const Country2 = ({ country })=>{
                 setIsActive(true);
         }
         return(
-                !isActive?
+                <>                
+                {!isActive?
                 <div  className="country" onClick={()=>handleClick()}>
                     <img src={ country.flag } alt="flag of a country" />
                     <h4>{ country.name }</h4>
                     <p><span>Population:</span> {country.population}</p>
                     <p><span>Region:</span> {country.region}</p>
                     <p><span>Capital:</span> {country.capital}</p>
-                </div>:
-                <CountryDetails country={country} setIsActive={setIsActive} />
-        
+                </div>: null}
+                {isActive? <CountryDetails country={country} setIsActive={setIsActive} /> : null}
+                </>
+
         )
 }
 

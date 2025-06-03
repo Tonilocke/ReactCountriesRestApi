@@ -1,6 +1,4 @@
-import { useState,useEffect } from "react";
-import Country from "./Country";
-import CountryDetails from "./CountryDetails";
+import { useState, useEffect } from "react";
 import Countries from "./Countries";
 import * as data from "../data.json";
 
