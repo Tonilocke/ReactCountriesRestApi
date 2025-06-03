@@ -1,8 +1,11 @@
 import { useState } from "react";
 const searchIcon = new URL("../searchIcon.svg", import.meta.url);
-const SearchBar = ({  setRegion })=>{
+const SearchBar = ({  setRegion, setSearchCountry })=>{
     
-
+    function handleSearch(e){
+        e.preventDefault();
+        setSearchCountry(e.target.value);
+    }
     function handleRegion(e){
        e.preventDefault();
        setRegion(e.target.value);
@@ -10,7 +13,7 @@ const SearchBar = ({  setRegion })=>{
     return(
        <form action=""  >
             <label htmlFor="nameFilter">
-                <img src={searchIcon} alt="search icon" /> <input type="text" name="nameFilter" id="nameFilter" placeholder="Search for a country"/>
+                <img src={searchIcon} alt="search icon" /> <input type="text" name="nameFilter" id="nameFilter" placeholder="Search for a country" onChange={(e)=>handleSearch(e)}/>
             </label>
         
             <select name="regions" id="regions" onChange={(e)=>handleRegion(e)}>

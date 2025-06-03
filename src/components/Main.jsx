@@ -5,18 +5,21 @@ import Countries from "./Countries";
 import * as data from "../data.json";
 
 
-const Main = ({ region })=>{
+const Main = ({ region, searchCountry })=>{
     const [isActive, setIsActive] = useState(false);
     const [countryName, setCountryName] = useState("");
     const [countries, setCountries] = useState([]);
     useEffect(()=>{
         if(region !=""){
             setCountries(data.filter(country =>country.region == region));
-         }
-         else{
+        }
+        else if(searchCountry != ""){
+            setCountries(data.filter(country => country.name.toLowerCase().includes(searchCountry.toLowerCase())));
+        }
+        else{
              setCountries([...data]);
-         }
-    },[region]);
+        }
+    },[region, searchCountry]);
     
     return(
         <main>

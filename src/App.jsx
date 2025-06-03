@@ -5,12 +5,13 @@ import SearchBar from "./components/Searchbar";
 import Main from './components/Main'
 export function App() {
 
-  const [region, setRegion] = useState(""); 
+  const [region, setRegion] = useState("");
+  const [searchCountry, setSearchCountry] = useState(""); 
   return (
     <>
       <Navbar />
-      <SearchBar  setRegion={ setRegion }/>
-      <Main region={ region }/>
+      <SearchBar  setRegion={ setRegion } setSearchCountry={ setSearchCountry }/>
+      <Main region={ region } searchCountry={ searchCountry }/>
     </>
   );
 }
