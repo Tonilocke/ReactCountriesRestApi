@@ -4,7 +4,6 @@ import CountryDetails from "./CountryDetails";
 import Countries from "./Countries";
 import * as data from "../data.json";
 
-
 const Main = ({ region, searchCountry })=>{
     const [isActive, setIsActive] = useState(false);
     const [countryName, setCountryName] = useState("");
@@ -13,11 +12,11 @@ const Main = ({ region, searchCountry })=>{
         if(region !=""){
             setCountries(data.filter(country =>country.region == region));
         }
-        else if(searchCountry != ""){
-            setCountries(data.filter(country => country.name.toLowerCase().includes(searchCountry.toLowerCase())));
-        }
         else{
-             setCountries([...data]);
+            setCountries([...data]);
+        }
+        if(searchCountry != ""){
+            setCountries(data.filter(country => country.name.toLowerCase().includes(searchCountry.toLowerCase())));
         }
     },[region, searchCountry]);
     
@@ -26,8 +25,6 @@ const Main = ({ region, searchCountry })=>{
             {<Countries countries = { countries } />}
         </main>
         
-        );
-   
+        );  
 }
-
 export default Main;
