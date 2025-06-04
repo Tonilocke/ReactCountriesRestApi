@@ -261,5 +261,36 @@ main{
             border-top-left-radius: 0.3em;
         }
     }
-
+    form{
+        flex-direction: column;
+        gap: 1em;
+        text-align: left;
+        & select{
+            margin-left: 3em;
+            width: 45%;
+        }
+    }
+    .country-details{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1em;
+        height: 100%;
+        & .flag{
+            width:95%;
+            margin: 0 auto;
+            padding: 1em 0;
+        }
+        & button{
+            margin: 4em 4em 0 4em;
+        }
+        & .infos{
+            display: block;
+        }
+    }
+    
+    .container{
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+    
 }

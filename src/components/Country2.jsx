@@ -15,7 +15,7 @@ const Country2 = ({ country })=>{
                     <p><span>Region:</span> {country.region}</p>
                     <p><span>Capital:</span> {country.capital}</p>
                 </div>: null}
-                {isActive? <CountryDetails country={country} setIsActive={setIsActive} /> : null}
+                {isActive? <CountryDetails country={country} setIsActive={setIsActive} key={country.name}/> : null}
                 </>
 
         )
