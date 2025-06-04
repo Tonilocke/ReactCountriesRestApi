@@ -1,8 +1,13 @@
 const backArrow = new URL("../backArrow2.svg", import.meta.url);
-const CountryDetails = ({ country, setIsActive })=>{
+const CountryDetails = ({ country, setIsActive, setCountry })=>{
+    function handleCountryClick(){
+        setIsActive(false);
+        setCountry(null);
+    }
+
     return(
         <section className="country-details">
-            <button onClick={()=>setIsActive(false)}> <img src={ backArrow } alt="arrow icon" /> Back</button>
+            <button onClick={()=>handleCountryClick()}> <img src={ backArrow } alt="arrow icon" /> Back</button>
             <div className="container">
                 <img src={country.flag} alt={country.name + "flag"} className="flag"/>
                 <div>
